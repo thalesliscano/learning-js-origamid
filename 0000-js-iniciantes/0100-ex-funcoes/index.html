@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício fuções</title>
+</head>
+<body>
+    <p>Funções é um bloco de codigo que podem ser executas e reutilizados.</p>
+    <pre><code>
+    function areaQuadrado(lado) {
+        return lado * lado;
+    }
+
+    areaQuadrado(4) // 16
+    areaQuadrado(5) // 25
+    areaQuadrado(2) // 4
+    </code></pre>
+
+    <p>Ao Criar funções, você pode definir argumentos. E ao executar funções você pode passar argumentos</p>
+    <pre><code>
+    // peso e altura são os parâmetros
+    function imc(peso, altura) {
+        const imc = peso / (altura ** 2);
+        return imc;
+    }
+
+    imc(80, 1.80) // 80 e 1.80 são os argumentos
+    imc(60, 1.70) // 60 e 1.70 são os argumentos
+    </code></pre>
+    <p>Parêntes executam as funções.</p>
+    <pre><code>
+    function saudacao(nome) {
+        console.log("Olá, " + nome + "!");
+    }
+
+    saudacao("Mundo");
+    </code></pre>
+    <p>Argumentos podem ser funções</p>
+    <pre><code>
+    addEventListener('click', function() {
+        console.log('Clicou');
+    });
+    // A função possui dois argumentos. Primeiro é a string 'click'. Segundo é uma função anônima
+    </code></pre>
+    <p>Podem retornar ou não um valor</p>
+    <p>Uma função pode retornar qualquer tipo de dado e até outras funções.</p>
+
+    <p>escopo = global e de bloco</p>
+    <p>escopo léxico</p>
+    <pre><code>
+    var profissao = 'Designer';
+
+    function dados() {
+        var nome = 'André';
+        var idade = 28;
+        function outrosDados() {
+            var endereco = 'Rio de Janeiro';
+            var idade = 29;
+            return `${nome}, ${idade}, ${endereco}, ${profissao}`;
+        }
+        return outrosDados();
+    }
+
+    dados(); // Retorna 'André, 29, Rio de Janeiro, Designer'
+    outrosDados(); // retorna um erro
+
+    </code></pre>
+
+    <p>Hoisting é o comportamento padrão do JavaScript de "mover" as declarações (mas não as inicializações) para o topo do seu escopo antes da execução do código. </p>
+
+    <pre><code>
+    imc(80, 1.80); // imc aparece no console
+
+    function imc(peso, altura) {
+        const imc = peso / (altura ** 2);
+        console.log(imc);
+    }
+    </code></pre>
+
+    <script src="./script.js"></script>
+</body>
+</html>
